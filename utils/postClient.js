@@ -6,10 +6,12 @@ const client = require('contentful').createClient({
     accessToken: accessToken,
 })
 
-export async function fetchEntries() {
-    const entries = await client.getEntries()
+export async function fetchPostEntries() {
+    const entries = await client.getEntries({
+        content_type: "post"
+    })
     if (entries.items) return entries.items
     console.log(`Error getting Entries for ${contentType.name}.`)
 }
 
-export default { fetchEntries }
+export default { fetchPostEntries }
