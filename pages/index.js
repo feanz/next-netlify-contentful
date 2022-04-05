@@ -61,10 +61,12 @@ export default function Home({ posts }) {
 }
 
 export async function getStaticProps() {
-  const entires = await fetchPostEntries()  
-  const posts = entires.map(e => {    
+  const entires = await fetchPostEntries()
+  const posts = entires.map(e => {
     return e.fields
   });
+
+  posts.sort((a, b) => (a.date > b.date) ? 1 : -1);
 
   return {
     props: {
