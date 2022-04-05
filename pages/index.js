@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Header from '@components/Header'
 import Footer from '@components/Footer'
 import { fetchPostEntries } from '../utils/postClient'
-import Post from '@components/Post'
+import Post from '@components/post'
 
 export default function Home({ posts }) {
   return (
