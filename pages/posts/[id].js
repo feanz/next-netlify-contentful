@@ -1,4 +1,4 @@
-import Layout from '../../components/layout'
+import Layout from '../../components/Layout'
 import { fetchPostEntries } from '../../utils/postClient'
 
 export default function Post({ post }) {
