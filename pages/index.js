@@ -1,6 +1,6 @@
 import Head from 'next/head'
-import Post from '@components/post'
-import Layout, { siteTitle } from '@components/layout'
+import Post from '../components/post'
+import Layout, { siteTitle } from '../components/layout'
 import { fetchPostEntries } from '../utils/postClient'
 
 export default function Home({ posts }) {
