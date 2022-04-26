@@ -1,16 +1,18 @@
-function Post({ date, image, title }) {
-    let { file, description } = image
+import Link from 'next/link'
 
-    return (
-        <div className="post">
-            <img alt={description} src={`https:${file.url}`} />
-            <div className="description">{description}</div>
-            <div className="text">
-                <h2>{title}</h2>
-                <h3>{date.substring(0, 10)}</h3>
-            </div>
+function Post({ date, image, title, slug }) {
+  let { file, description } = image
 
-            <style jsx>{`
+  return (
+    <div className="post">
+      <Link href={`/posts/${slug}`}><a><img alt={description} src={`https:${file.url}`} /></a></Link>
+      <div className="description">{description}</div>
+      <div className="text">
+        <h2>{title}</h2>
+        <h3>{date.substring(0, 10)}</h3>
+      </div>
+
+      <style jsx>{`
           .post {
             position: relative;
             margin: 10px;
@@ -56,8 +58,8 @@ function Post({ date, image, title }) {
             max-width: 300px;
           }
         `}</style>
-        </div>
-    )
+    </div>
+  )
 }
 
 export default Post
